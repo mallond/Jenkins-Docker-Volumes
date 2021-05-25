@@ -25,6 +25,8 @@ sudo chown cloud_user:cloud_user influxdb2
 # target /var/lib/grafana
 ```
 mkdir data/grafana
+chmod -R 777 data/grafana
+sudo chown cloud_user:cloud_user data/grafana
 ```
 ## Jenkins
 ```
@@ -33,10 +35,7 @@ docker run -d --restart unless-stopped -p 8080:8080 -p 50000:50000 -v ~/data/jen
 
 ## InfluxDB
 ```
-docker run -p 8086:8086 \
-      -v ~/data/influxdb:/var/lib/influxdb \
-      influxdb:2.0.6
-      
+
 docker run --restart unless-stopped -p 8086:8086 \
       -v ~/data/influxdb2:/var/lib/influxdb2 \
       -e DOCKER_INFLUXDB_INIT_USERNAME=admin \
@@ -44,8 +43,15 @@ docker run --restart unless-stopped -p 8086:8086 \
       -e DOCKER_INFLUXDB_INIT_ORG=everi.com \
       -e DOCKER_INFLUXDB_INIT_BUCKET=everi \
       influxdb:2.0
+           
 
 ```
 
 ## Graphana
+```
+docker run -d  --restart unless-stopped -p 3000:3000 --name=grafana -v ~/data/grafana:/var/lib/grafana grafana/grafana:7.5.7-ubuntu
+# user/pwd admin/admin - please change
+
+
+```
 
