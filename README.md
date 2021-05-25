@@ -11,16 +11,16 @@ sudo snap install docker
 ##  target /var/jenkins_home
 ```
 # target /var/jenkins_home
-mkdir data/jenkins_home
+mkdir data/jenkins_home -p
 chmod -R 777 data/jenkins_home
 sudo chown cloud_user:cloud_user data/jenkins_home
 e05ae6b0fe63411caf0cf512f1426088
 ```
 ## target /var/lib/influxdb2
 ```
-mkdir data/influxdb2
+mkdir data/influxdb2 -p
 chmod -R 777 data/influxdb2
-sudo chown cloud_user:cloud_user influxdb2
+sudo chown cloud_user:cloud_user data/influxdb2
 ```
 
 ## target /var/lib/grafana
@@ -46,7 +46,7 @@ docker run --restart unless-stopped -p 8086:8086 \
       -e DOCKER_INFLUXDB_INIT_ORG=everi.com \
       -e DOCKER_INFLUXDB_INIT_BUCKET=everi \
       influxdb:2.0
-           
+          
 
 ```
 
