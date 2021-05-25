@@ -13,16 +13,15 @@ sudo snap install docker
 mkdir data/jenkins_home
 chmod -R 777 data/jenkins_home
 e05ae6b0fe63411caf0cf512f1426088
-
-```
 ```
 # target /var/lib/influxdb2
 ```
 mkdir data/influxdb2
 chmod -R 777 data/influxdb2
 ```
-```
+
 # target /var/lib/grafana
+```
 mkdir data/grafana
 ```
 ## Jenkins
@@ -40,6 +39,7 @@ docker run --restart unless-stopped -p 8086:8086 \
       -e DOCKER_INFLUXDB_INIT_ORG=everi.com \
       -e DOCKER_INFLUXDB_INIT_BUCKET=everi \
       influxdb:2.0
+# add the -d for deamon 
 ```
 
 ## Graphana
