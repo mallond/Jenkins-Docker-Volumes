@@ -21,6 +21,7 @@ e05ae6b0fe63411caf0cf512f1426088
 mkdir data/influxdb2
 chmod -R 777 data/influxdb2
 ```
+```
 # target /var/lib/grafana
 mkdir data/grafana
 ```
@@ -32,7 +33,7 @@ docker run -p 8080:8080 --restart unless-stopped -p 50000:50000 -v ~/data/jenkin
 
 ## InfluxDB
 ```
-docker run -p 8086:8086 \
+docker run --restart unless-stopped -p 8086:8086 \
       -v ~/data/influxdb2:/var/lib/influxdb2 \
       -e DOCKER_INFLUXDB_INIT_USERNAME=admin \
       -e DOCKER_INFLUXDB_INIT_PASSWORD=password \
