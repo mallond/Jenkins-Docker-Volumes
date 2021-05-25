@@ -7,7 +7,7 @@
 sudo snap install docker
 ```
 
-# Volumes
+# Volumes - Why? First reason is backkup!
 ##  target /var/jenkins_home
 ```
 # target /var/jenkins_home
