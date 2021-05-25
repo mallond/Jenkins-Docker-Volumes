@@ -1,4 +1,4 @@
 # microk8s-quality-assurance
 
-> Jenkins InfluxDB Graphana - Dockerized 
+> Nginx-Reverse-Proxy Jenkins InfluxDB Graphana - Dockerized 
 
