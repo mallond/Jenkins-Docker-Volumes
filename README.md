@@ -7,7 +7,8 @@
 sudo snap install docker
 ```
 
-## Volumes
+# Volumes
+##  target /var/jenkins_home
 ```
 # target /var/jenkins_home
 mkdir data/jenkins_home
@@ -15,19 +16,21 @@ chmod -R 777 data/jenkins_home
 sudo chown cloud_user:cloud_user data/jenkins_home
 e05ae6b0fe63411caf0cf512f1426088
 ```
-# target /var/lib/influxdb2
+## target /var/lib/influxdb2
 ```
 mkdir data/influxdb2
 chmod -R 777 data/influxdb2
 sudo chown cloud_user:cloud_user influxdb2
 ```
 
-# target /var/lib/grafana
+## target /var/lib/grafana
 ```
 mkdir data/grafana
 chmod -R 777 data/grafana
 sudo chown cloud_user:cloud_user data/grafana
 ```
+
+# Services
 ## Jenkins
 ```
 docker run -d --restart unless-stopped -p 8080:8080 -p 50000:50000 -v ~/data/jenkins_home:/var/jenkins_home jenkins:2.60.3 
