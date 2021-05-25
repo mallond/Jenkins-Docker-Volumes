@@ -3,7 +3,7 @@
 > Nginx-Reverse-Proxy Jenkins InfluxDB Graphana - Dockerized 
 
 
-## Volums
+## Volumes
 ```
 mkdir /var/jenkins_home
 ```
