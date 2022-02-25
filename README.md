@@ -33,7 +33,12 @@ sudo chown cloud_user:cloud_user data/grafana
 # Services
 ## Jenkins
 ```
-docker run -d --restart unless-stopped -p 8080:8080 -p 50000:50000 -v ~/data/jenkins_home:/var/jenkins_home jenkins:2.60.3 
+docker run -d --name jenkins9082 --restart unless-stopped -p 9082:8080 -p 50002:50000 -v /mnt/c/Users/devops/jenkins9082:/var/jenkins_home jenkins/jenkins:lts-jdk11 
+  
+# This takes some time to become accessible due to all the loding plugins
+# docker container ls
+# sudo docker exec -it jenkins9082 /bin/bash
+# cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 ## InfluxDB
